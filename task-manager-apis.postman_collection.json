@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "dba02ebd-e9ac-4527-afcb-56e1c5e7de75",
+		"name": "task-manager-apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add new task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <add token here>",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"task title\",\r\n    \"description\":\"task description\",\r\n    \"status\":\"2\",\r\n    \"dueDate\":\"2023-09-18\",\r\n    \"priority\":\"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find task by status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <add token here>",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/task/status/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"task",
+						"status",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <add token here>",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"t1\",\r\n    \"description\":\"t1t2t3t4t5t56\",\r\n    \"status\":\"1\",\r\n    \"dueDate\":\"2023-09-18\",\r\n    \"priority\":\"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/task/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"task",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer <add token here>",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/task/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"task",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task manager - login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idToken\": \"<add id token from google here>\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
